@@ -11,15 +11,20 @@ function CargarPokemones() {
           .get(url)
           .then((result) => {
             const pokemon = result.data;
-            const {abilities, weight, height, sprites} = pokemon;
+            console.log(pokemon);
+            const {abilities, weight, height, id, types} = pokemon;
 
-            document.querySelector("#listado").innerHTML += `
-            <div class="listItem">
-              <img src="${sprites.front_default}"> 
+            document.querySelector("#listado").innerHTML += `<div class="listItem" id="${id}">`;
+            document.getElementById(id).innerHTML += `
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png"> 
               <p> ${name} </p>
-              H: ${height}cm / W ${weight}kg
-            </div>
+              Height:${height}cm / Weight:${weight}kg 
+              <br>
             `;
+            
+            types.map((type) => {
+              document.getElementById(id).innerHTML += `<div class="${type.type.name}"> ${type.type.name} </div>`;
+            });
           })
           .catch((error) => {
             console.log(error);

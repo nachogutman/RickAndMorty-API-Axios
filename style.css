@@ -1,11 +1,15 @@
+@font-face {
+  font-family: fuente;
+  src: url(SimplyMono-Book.ttf);
+}
 * {
   padding: 0;
   margin: 0;
+  font-family: fuente;
+}
 
-  background-image: url("/imgs/fondo.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+html{
+  background-color: #FFFDE7;
 }
 
 #listado {
@@ -23,5 +27,38 @@
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.1) 0px 1px 1px;
   padding: 10%;
+  font-size: 11px;
+  text-align: center;
+}
+.listItem p{
+  font-size: 20px;
+}
+
+.listItem:hover{
+  background-color: #03c04c0c;
+}
+
+.listItem img{
+  margin: auto;
+  width: 100px;
+}
+
+.grass{ 
+  padding: 1%;
+  background-color: #03C04A;
+  border-radius: 15px;
+}
+
+.poison{ 
+  padding: 1%;
+  background-color: #03C04A;
+  border-radius: 15px;
+}
+
+#titulo{
+  font-size: 100px;
+  margin-top: 2%;
+  text-align: center;
+  color: #03C04A;
 }
 
