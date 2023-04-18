@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  background-image: url("/imgs/fondo.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#listado {
+  margin:  5% auto 5% auto;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 4%;
+}
+
+.listItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px, rgba(0, 0, 0, 0.1) 0px 1px 1px;
+  padding: 10%;
+}
+
