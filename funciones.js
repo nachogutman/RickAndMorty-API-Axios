@@ -1,37 +1,27 @@
-function CargarPokemones() {
-  document.getElementById('cargar').style = "display: none;";
+function CargarPersonajes() {
+  document.getElementById("cargar").style = "display: none;";
   axios
-    .get("https://pokeapi.co/api/v2/pokemon?limit=50")
+    .get("https://rickandmortyapi.com/api/character")
     .then((result) => {
-      const pokemones = result.data.results;
-      pokemones.map((pokemon) => {
-        const { name, url } = pokemon;
+      const personajes = result.data.results;
+      personajes.map((personaje) => {
+        const { id, name, species, origin, status, location, image } = personaje;
 
-        axios
-          .get(url)
-          .then((result) => {
-            const pokemon = result.data;
-            console.log(pokemon);
-            const {abilities, weight, height, id, types} = pokemon;
-
-            document.querySelector("#listado").innerHTML += `<div class="listItem" id="${id}">`;
-            document.getElementById(id).innerHTML += `
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png"> 
-              <p> ${name} </p>
-              Height:${height}cm / Weight:${weight}kg 
-              <br>
-            `;
-            
-            types.map((type) => {
-              document.getElementById(id).innerHTML += `<div class="${type.type.name}"> ${type.type.name} </div>`;
-            });
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        document.getElementById("listado").innerHTML += `
+        <div class="listItem" onclick="mostrarInfo(${id})">
+          <img src=${image}>
+          <div id="textos">
+            <b> ${name} </b><br>
+          </div>
+        </div>
+        `;
       });
     })
     .catch((error) => {
       console.log(error);
     });
+}
+
+function mostrarInfo(id){
+  console.log(id);
 }
