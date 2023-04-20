@@ -16,7 +16,6 @@ header{
 header img{
   float: left;
   width: 7%;
-  height: 7%;
   padding: 2%;
 }
 
@@ -25,7 +24,7 @@ body{
 }
 
 #titulo{
-  width: 94%;
+  width: 89%;
   font-size: 100px;
   padding: 2%;
   text-align: center;
@@ -65,6 +64,50 @@ body{
   align-items: center;
   justify-content: center;
   padding: 3%;
+}
+
+#cargar{
+  position: static;
+  float: right;
+  padding: 1.5%;
+  margin: 2.9%;
+  font-size: 30px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 4px;
+}
+
+#cargar:hover{
+  background-color: #c9c9c9;
+}
+
+#modal{
+  display: none;
+  background-color: #c9c9c9;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 3%;
+  display: flex;
+  font-size: 30px;
+  border-radius: 20px;
+}
+
+#modal img{
+  float: right;
+}
+
+#modal button{
+  background-color: rgb(151, 26, 26);
+  border: none;
+  font-size: 30px;
+  padding: 1%;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 2% auto auto;
 }
 
 
